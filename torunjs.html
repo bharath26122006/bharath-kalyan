@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{           
+             text-align: center;
+        }
+        input,select,button{
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolor molestias a natus mollitia, quisquam aspernatur reiciendis culpa ipsum alias sint eos. Officiis hic cumque at aperiam voluptatem non nihil!
+    </p>
+    <script>
+         let paragraph=document.getElementById("para").style.backgroundColor="red"
+         console.log("haii")
+    </script>
+</body>
+   <input type="number" placeholder="enter the first value"id="num1">
+   <input type="=number" placeholder="enter the second value"id="num2">
+   <select name="" id="operation">
+    <option value="add">add</option>
+    <option value="multiplication">multiplication</option>
+    <option value="divition">divition</option>
+    
+   </select>
+   <button onclick="calculate()">calculate</button>
+   <div id="result">result</div>
+   <script>
+    function calculate() {
+        let num1=(document.getElementById("num1").value);
+        let num2=(document.getElementById("num2").value);
+        let operation=(document.getElementById("operation").value);
+        let result;  
+        if(isNaN(num1)||isNaN(num2)){
+            result="check your entered input";
+        }
+        else{
+            switch(operation){
+                case"add":
+                result=num1+num2;
+                break;
+            }
+        }
+        document.getElementById("result").innerText=result;
+      }
+   </script>
+</html> 
