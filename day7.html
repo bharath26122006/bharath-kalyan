@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registraction form</h2>
+    <form id="Registraction" onsubmit="return validdateform()">
+    <label for="name">name</label>
+    <input type="text" id="name"name="name" required>
+    <div class="error "id="phoneError"></div>
+    <br><br>
+         <!--email field-->   
+   <label for="email">email</label>
+   <input type="email" id="email" name="email" required>
+   <div id="emailError" class="error"></div>
+   <br><br>
+         <!--password field-->  
+   <label for="password">password</label>
+   <input type="password" id="password" name="password" required>
+   <div id="passwordError" class="error"></div>
+   <br><br>
+          <!--phonenumber field-->  
+   <label for="phonenumber">phonenumber</label>
+   <input type="phonenumber" id="phonenumber" name="phonenumber" required>
+   <div id="phonenumberError" class="error"></div>
+   <br><br>
+   <button type="submit">submit</button>
+</form> 
+
+      <script>
+   function validateNum(name){
+        const regex=/^[A-Za-z\s]+$/;
+        if(name.trim() ===""){
+            return "name cannot be empty";
+        } 
+        if(!regex.test(name)) {
+            return " name can only  contain letter and space;"
+        }
+        return "name num is valid"
+    }
+    function validateEmail(email){
+        const regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+[a-zA-Z]{2,}$/;
+        if(email.trim() ===""){
+            return "email cannot be empty";
+        } 
+        if(!regex.test(email)) {
+            return "invaild email format";
+        }
+        return "name num is valid"
+    } function validatephonenumber(phonenumber){
+        const regex=/^[0-9]{10}$/;
+        if(phonenumber.trim() ===""){
+            return "phonenumber cannot be empty";
+        } 
+        if(!regex.test(phonenumber)) {
+            return " phonenumber can only  contain letter and space;"
+        }
+        return "phonenumber num is valid"
+    } function validatepassword(password){
+        const regex=/^(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if(password.trim() ===""){
+            return "password cannot be empty";
+        } 
+        if(!regex.test(password)) {
+            return " password can only  contain letter and space;"
+        }
+        return "password num is valid"
+    }
+    function validateform(){
+        
+        }
+        document.getElementById("numError").innertext=
+    
+    const name = document.getment.getElementById("name").value
+    const email = document.getment.getElementById("email").value
+    const phonenumber = document.getment.getElementById("phonenumber").value
+    const password = document.getment.getElementById("password").value
+    const nameError = validdateName(name);
+    const emailError = validdateName(email);
+    const phonenumberError = validdateName(phonenumber);
+    const passwordError = validdateName(password);
+
+    if (name === "name is valid" && emailError === "Email is valid" && passwordError === "password is valid" && phoneError === "phone number is valid"){
+        return true;
+    }
+    document.getElementById("nameError").innertext=nameError==="is valid"?" "; nameError;
+    document.getElementById("emailError").innertext=emailError==="is valid"?" "; emailError;
+    document.getElementById("phonenumberError").innertext=phonenumberError==="is valid"?" "; phonenumberError;
+    document.getElementById("passwordError").innertext=passwordError==="is valid"?" "; passwordError;
+    return false;
+
+
+
+    
+
+
+   </script>
+</body>
+</html>
