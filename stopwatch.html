@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>stopwatch</h2>
+    <P>00:00</P>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+    <button onclick="reset()">reset</button>
+    <script>
+        let seconds=0;
+        let intervalid=null;
+
+        function updateDisplay() {
+            let minits=string(math.floor(seconds / 60).padstart(2,'0'));
+            let seconds=string(seconds % 60).padstart(2,'0');
+            document.getElementById("dispaly").textContent=` ${minits}:${seconds}`;
+        }
+        function start(){
+             if(intervalid){
+                intervalid=setInterval(()=>{
+                    seconds++;
+                    updateDisplay();
+                })
+
+                
+             }
+        }
+        function stop(){
+            clearInterval(intervalid);
+            intervalid=null;
+        }
+        function reset(){
+            stop();
+            seconds=0;
+            updateDisplay();
+        }
+    </script>
+</body>
+</html>
