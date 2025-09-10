@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let text="aaaba";
+        let pattern=/\a/g;
+        let pattern2=/\a+/g;
+        let pattern3=/\a?/g;
+        let result=text.match(pattern);
+        let result2=text.match(pattern2);
+        let result3=text.match(pattern3);
+        console.log(result)
+        console.log(result2)
+        console.log(result3)
+
+        let sentence="hai hello\n hai, i am fine"
+        let pattern4=/^\hai+/igm;
+        let resultS=sentence.match
+
+        
+        let digitchar="js001";
+        let pattern6=/\d+\w+/ig;
+        let result6=digitchar.match(pattern6);
+        console.log(result6);
+
+        
+        let username="javascript program";
+        let pattern7=/(\w+)/g;
+        let result7=username.match(pattern7)
+        console.log(result7);
+        console.log(result7[0]);
+        console.log(result7[1]);
+
+        let lines ="apple banana apple grape";
+        let pattern9=/apple/;
+        console.log(pattern9.test(lines));
+
+
+        let str="mr bean has a green apple and a red apple";
+        const regex= /apple/ig;
+        let result8 = str.replace(regex,"strawberries");
+        console.log(result8);
+
+
+    </script>
+</body>
+</html>
